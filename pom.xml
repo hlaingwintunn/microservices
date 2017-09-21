@@ -26,6 +26,7 @@
 
 	<modules>
 		<module>discoveryserver</module>
+		<module>accounts-microservice-server</module>
 	</modules>
 
 	<build>
