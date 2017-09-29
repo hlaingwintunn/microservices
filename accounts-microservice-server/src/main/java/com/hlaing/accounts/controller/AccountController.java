@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hlaing.accounts.dao.AccountRepository;
@@ -28,7 +29,7 @@ public class AccountController {
 		return accounts.toArray(new Account[accounts.size()]);
 	}
 	
-	@PostMapping("/accounts/{id}")
+	@RequestMapping("/accounts/{id}")
 	public Account byId(@PathVariable("id") String id) {
 		logger.info("accounts-microservice byId() invoked: " + id);
 		Account account = accountRepository.getAccount(id);
